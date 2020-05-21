@@ -1,0 +1,17 @@
+
+sudo apt-get update -y
+
+sudo useradd -m -d /var/lib/jenkins -s /bin/bash -G sudo jenkins 
+##-m -d /home/jenkins 
+##-s /bin/sh
+##-G group 
+
+sudo apt-get install openjdk-11-jre-headless -y
+
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+sudo apt-get update -y
+
+sudo apt-get install jenkins -y
